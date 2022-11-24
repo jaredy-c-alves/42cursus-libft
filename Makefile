@@ -1,4 +1,5 @@
 NAME	= libft.a
+SO		= libft.so
 AR		= ar
 
 CC		= cc
@@ -19,6 +20,10 @@ ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
 ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 BOBJS	= $(BSRCS:.c=.o)
 
+so:
+	$(CC) -fPIC $(CFLAGS) -c $(SRCS) $(BSRCS)
+	gcc -shared -o $(SO) $(OBJS) $(BOBJS)
+
 %.o:
 	$(CC) $(CFLAGS) -c $(@:.o=.c) -o $@
 
@@ -31,7 +36,7 @@ clean:
 	rm -rf $(OBJS) $(BOBJS)
 
 fclean: clean
-	rm -rf $(NAME)
+	rm -rf $(NAME) $(SO)
 
 re: fclean all
 
