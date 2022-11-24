@@ -6,7 +6,7 @@
 /*   By: jcapistr <jcapistr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 21:56:48 by jcapistr          #+#    #+#             */
-/*   Updated: 2022/11/24 17:55:00 by jcapistr         ###   ########.fr       */
+/*   Updated: 2022/11/24 17:58:02 by jcapistr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,6 @@ void				ft_putnbr_fd(int n, int fd);
 t_list				*ft_lstnew(void *content);
 void				ft_lstadd_front(t_list **lst, t_list *new);
 int					ft_lstsize(t_list *lst);
+t_list				*ft_lstlast(t_list *lst);
 
 #endif //LIBFT_H
