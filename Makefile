@@ -15,7 +15,7 @@ ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 OBJS	= $(SRCS:.c=.o)
 
 BSRCS	= \
-ft_lstnew.c
+ft_lstnew.c ft_lstadd_front.c
 BOBJS	= $(BSRCS:.c=.o)
 
 %.o:
