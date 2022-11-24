@@ -20,17 +20,17 @@ ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
 ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 BOBJS	= $(BSRCS:.c=.o)
 
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	$(AR) rcs $(NAME) $(OBJS)
+
 so:
 	$(CC) -fPIC $(CFLAGS) -c $(SRCS) $(BSRCS)
 	gcc -shared -o $(SO) $(OBJS) $(BOBJS)
 
 %.o:
 	$(CC) $(CFLAGS) -c $(@:.o=.c) -o $@
-
-$(NAME): $(OBJS)
-	$(AR) rcs $(NAME) $(OBJS)
-
-all: $(NAME)
 
 clean:
 	rm -rf $(OBJS) $(BOBJS)
@@ -43,4 +43,4 @@ re: fclean all
 bonus: $(OBJS) $(BOBJS)
 	$(AR) rcs $(NAME) $(OBJS) $(BOBJS)
 
-.PHONY: all clean fclean re bonus
+.PHONY: all so clean fclean re bonus
