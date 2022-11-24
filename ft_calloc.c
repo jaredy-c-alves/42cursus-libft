@@ -6,7 +6,7 @@
 /*   By: jcapistr <jcapistr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 21:57:45 by jcapistr          #+#    #+#             */
-/*   Updated: 2022/11/21 21:57:45 by jcapistr         ###   ########.fr       */
+/*   Updated: 2022/11/24 22:08:15 by jcapistr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,17 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void	*ptr;
+	unsigned char	*ptr;
+	size_t			i;
 
-	ptr = malloc(nmemb * size);
+	i = 0;
+	ptr = (unsigned char *)malloc(nmemb * size);
 	if (!ptr)
 		return (0);
-	ft_bzero(ptr, nmemb * size);
+	while (i < (nmemb * size))
+	{
+		ptr[i] = '\0';
+		i++;
+	}
 	return (ptr);
 }

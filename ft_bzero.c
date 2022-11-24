@@ -6,7 +6,7 @@
 /*   By: jcapistr <jcapistr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 21:57:38 by jcapistr          #+#    #+#             */
-/*   Updated: 2022/11/21 21:57:38 by jcapistr         ###   ########.fr       */
+/*   Updated: 2022/11/24 20:30:46 by jcapistr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
-	char	*str;
+	unsigned char	*ptr;
+	size_t			i;
 
-	str = (char *)s;
 	i = 0;
+	ptr = s;
 	while (i < n)
 	{
-		*(str + i) = 0;
+		ptr[i] = '\0';
 		i++;
 	}
 }
