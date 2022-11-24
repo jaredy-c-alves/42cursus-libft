@@ -6,7 +6,7 @@
 /*   By: jcapistr <jcapistr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 21:59:40 by jcapistr          #+#    #+#             */
-/*   Updated: 2022/11/21 21:59:40 by jcapistr         ###   ########.fr       */
+/*   Updated: 2022/11/24 19:01:37 by jcapistr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 
-	if (!dst || !src)
+	if (!dst && size == 0)
 		return (0);
 	i = 0;
 	if (size != 0)
