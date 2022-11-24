@@ -6,7 +6,7 @@
 /*   By: jcapistr <jcapistr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 21:57:04 by jcapistr          #+#    #+#             */
-/*   Updated: 2022/11/24 11:13:04 by jcapistr         ###   ########.fr       */
+/*   Updated: 2022/11/24 19:13:28 by jcapistr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,25 @@ static int	ft_abs(int n)
 		return (-n);
 	else
 		return (n);
+}
+
+static int	ft_nbrlen(int n)
+{
+	int	i;
+	int	neg;
+
+	i = 0;
+	neg = 0;
+	if (n < 0)
+		neg = 1;
+	if (n == 0)
+		return (1);
+	while (n != 0)
+	{
+		n /= 10;
+		i++;
+	}
+	return (i + neg);
 }
 
 static void	ft_strrev(char *str)
@@ -39,24 +58,26 @@ static void	ft_strrev(char *str)
 
 char	*ft_itoa(int n)
 {
+	size_t	i;
 	size_t	len;
 	int		neg;
 	char	*str;
 
-	len = 0;
+	i = 0;
 	neg = (n < 0);
-	str = ft_calloc((10 + neg + 1), sizeof(*str));
+	len = ft_nbrlen(n);
+	str = ft_calloc((len + 1), sizeof(*str));
 	if (!str)
 		return (0);
 	if (n == 0)
 		str[0] = '0';
 	while (n != 0)
 	{
-		str[len++] = (char)('0' + ft_abs(n % 10));
+		str[i++] = (char)('0' + ft_abs(n % 10));
 		n /= 10;
 	}
 	if (neg)
-		str[len] = '-';
+		str[i] = '-';
 	ft_strrev(str);
 	return (str);
 }
