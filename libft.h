@@ -6,7 +6,7 @@
 /*   By: jcapistr <jcapistr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 21:56:48 by jcapistr          #+#    #+#             */
-/*   Updated: 2022/11/24 10:41:38 by jcapistr         ###   ########.fr       */
+/*   Updated: 2022/11/24 11:14:51 by jcapistr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 #endif //LIBFT_H
