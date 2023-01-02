@@ -25,8 +25,8 @@ so: $(BOBJS)
 	$(CC) -fPIC $(CFLAGS) -c $(BSRCS)
 	$(CC) -shared -o $(SO) $(BOBJS)
 
-%.o:
-	$(CC) $(CFLAGS) -c $(@:.o=.c)
+%.o: %.c
+	$(CC) $(CFLAGS) -c $(<) -o $(@)
 
 clean:
 	rm -rf $(OBJS) $(BOBJS)
